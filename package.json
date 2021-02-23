@@ -1,0 +1,40 @@
+{
+  "name": "flex-dialpad-addon-plugin-master",
+  "version": "4.0.1",
+  "private": true,
+  "scripts": {
+    "bootstrap": "flex-plugin check-start",
+    "prebuild": "rimraf build && npm run bootstrap",
+    "build": "./node_modules/.bin/env-cmd -f .env.production flex-plugin build",
+    "postinstall": "flex-plugin pre-script-check",
+    "prestart": "npm run bootstrap",
+    "start": "./node_modules/.bin/env-cmd -f .env.development flex-plugin start"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "env-cmd": "^10.1.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "flex-plugin-scripts": "4.3.14-beta.0"
+  },
+  "devDependencies": {
+    "@twilio/flex-ui": "^1",
+    "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "rimraf": "^3.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
